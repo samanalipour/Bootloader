@@ -1,0 +1,2 @@
+../Applicaction/Src/Hex_parser.c:13:15:parse_hex_line	9
+../Applicaction/Src/Hex_parser.c:74:5:validate_checksum	2
