@@ -49,7 +49,7 @@ int SD_Read_Line(uint32_t line, char *Data, size_t bufferSize) {
     uint32_t currentLine = 0;
 
     // Open the file
-    FR_Status = f_open(&Fil, "Application2.hex", FA_READ);
+    FR_Status = f_open(&Fil, "Application.hex", FA_READ);
     f_lseek(&Fil, 0);
     if (FR_Status != FR_OK) {
         DEBUG_PRINT("Error! While opening file (Application2.hex) for reading.\r\n");

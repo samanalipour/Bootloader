@@ -27,9 +27,9 @@ FATFS/App/fatfs.o: ../FATFS/App/fatfs.c ../FATFS/App/fatfs.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
- /home/saman/Desktop/Bootloader/Applicaction/Inc/printf_redirect.h \
- /home/saman/Desktop/Bootloader/Applicaction/Inc/Hex_parser.h \
- /home/saman/Desktop/Bootloader/Applicaction/Inc/MY_FLASH.h \
+ /home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/printf_redirect.h \
+ /home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/Hex_parser.h \
+ /home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/MY_FLASH.h \
  ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
  ../Middlewares/Third_Party/FatFs/src/diskio.h \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/user_diskio.h
@@ -64,9 +64,9 @@ FATFS/App/fatfs.o: ../FATFS/App/fatfs.c ../FATFS/App/fatfs.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
-/home/saman/Desktop/Bootloader/Applicaction/Inc/printf_redirect.h:
-/home/saman/Desktop/Bootloader/Applicaction/Inc/Hex_parser.h:
-/home/saman/Desktop/Bootloader/Applicaction/Inc/MY_FLASH.h:
+/home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/printf_redirect.h:
+/home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/Hex_parser.h:
+/home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/MY_FLASH.h:
 ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h:
 ../Middlewares/Third_Party/FatFs/src/diskio.h:
 ../Middlewares/Third_Party/FatFs/src/ff.h:

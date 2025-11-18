@@ -29,9 +29,9 @@ Middlewares/Third_Party/FatFs/src/option/ccsbcs.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
- /home/saman/Desktop/Bootloader/Applicaction/Inc/printf_redirect.h \
- /home/saman/Desktop/Bootloader/Applicaction/Inc/Hex_parser.h \
- /home/saman/Desktop/Bootloader/Applicaction/Inc/MY_FLASH.h
+ /home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/printf_redirect.h \
+ /home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/Hex_parser.h \
+ /home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/MY_FLASH.h
 ../Middlewares/Third_Party/FatFs/src/option/../ff.h:
 ../Middlewares/Third_Party/FatFs/src/option/../integer.h:
 ../FATFS/Target/ffconf.h:
@@ -62,6 +62,6 @@ Middlewares/Third_Party/FatFs/src/option/ccsbcs.o: \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
-/home/saman/Desktop/Bootloader/Applicaction/Inc/printf_redirect.h:
-/home/saman/Desktop/Bootloader/Applicaction/Inc/Hex_parser.h:
-/home/saman/Desktop/Bootloader/Applicaction/Inc/MY_FLASH.h:
+/home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/printf_redirect.h:
+/home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/Hex_parser.h:
+/home/saman/Desktop/Bootloader/Bootloader/Applicaction/Inc/MY_FLASH.h:

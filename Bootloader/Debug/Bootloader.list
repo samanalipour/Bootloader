@@ -7,19 +7,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         0000ada0  08000190  08000190  00001190  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000a6c  0800af30  0800af30  0000bf30  2**3
+  2 .rodata       00000a54  0800af30  0800af30  0000bf30  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  0800b99c  0800b99c  0000d1ec  2**0
+  3 .ARM.extab    00000000  0800b984  0800b984  0000d1ec  2**0
                   CONTENTS
-  4 .ARM          00000008  0800b99c  0800b99c  0000c99c  2**2
+  4 .ARM          00000008  0800b984  0800b984  0000c984  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  0800b9a4  0800b9a4  0000d1ec  2**0
+  5 .preinit_array 00000000  0800b98c  0800b98c  0000d1ec  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  0800b9a4  0800b9a4  0000c9a4  2**2
+  6 .init_array   00000004  0800b98c  0800b98c  0000c98c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  0800b9a8  0800b9a8  0000c9a8  2**2
+  7 .fini_array   00000004  0800b990  0800b990  0000c990  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         000001ec  20000000  0800b9ac  0000d000  2**2
+  8 .data         000001ec  20000000  0800b994  0000d000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   9 .ccmram       00000000  10000000  10000000  0000d1ec  2**0
                   CONTENTS
@@ -39,15 +39,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  0002460b  00000000  00000000  0001e753  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000142a3  00000000  00000000  00042d5e  2**0
+ 18 .debug_line   00014348  00000000  00000000  00042d5e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000c6424  00000000  00000000  00057001  2**0
+ 19 .debug_str    000c642f  00000000  00000000  000570a6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  0011d425  2**0
+ 20 .comment      00000043  00000000  00000000  0011d4d5  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00004708  00000000  00000000  0011d468  2**2
+ 21 .debug_frame  00004708  00000000  00000000  0011d518  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 0000004d  00000000  00000000  00121b70  2**0
+ 22 .debug_line_str 00000058  00000000  00000000  00121c20  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -3756,7 +3756,7 @@ int SD_Read_Line(uint32_t line, char *Data, size_t bufferSize) {
  8001f04:	6013      	str	r3, [r2, #0]
 
     // Open the file
-    FR_Status = f_open(&Fil, "Application2.hex", FA_READ);
+    FR_Status = f_open(&Fil, "Application.hex", FA_READ);
  8001f06:	f107 0328 	add.w	r3, r7, #40	@ 0x28
  8001f0a:	3b18      	subs	r3, #24
  8001f0c:	2201      	movs	r2, #1
@@ -3844,8 +3844,8 @@ int SD_Read_Line(uint32_t line, char *Data, size_t bufferSize) {
  8001fbe:	46bd      	mov	sp, r7
  8001fc0:	bd80      	pop	{r7, pc}
  8001fc2:	bf00      	nop
- 8001fc4:	0800b0e8 	.word	0x0800b0e8
- 8001fc8:	0800b0fc 	.word	0x0800b0fc
+ 8001fc4:	0800b09c 	.word	0x0800b09c
+ 8001fc8:	0800b0e8 	.word	0x0800b0e8
 
 08001fcc <ITM_SendChar>:
            \li Is blocking when a debugger is connected, but the previous character sent has not been transmitted.
@@ -3988,8 +3988,8 @@ void printArray(const char *arrayName, uint8_t *array, size_t size) {
  8002096:	46bd      	mov	sp, r7
  8002098:	bd80      	pop	{r7, pc}
  800209a:	bf00      	nop
- 800209c:	0800b138 	.word	0x0800b138
- 80020a0:	0800b140 	.word	0x0800b140
+ 800209c:	0800b124 	.word	0x0800b124
+ 80020a0:	0800b12c 	.word	0x0800b12c
 
 080020a4 <main>:
 /**
@@ -4054,9 +4054,9 @@ int main(void)
  80020e6:	bf00      	nop
  80020e8:	e7fd      	b.n	80020e6 <main+0x42>
  80020ea:	bf00      	nop
- 80020ec:	0800b148 	.word	0x0800b148
+ 80020ec:	0800b134 	.word	0x0800b134
  80020f0:	40020000 	.word	0x40020000
- 80020f4:	0800b158 	.word	0x0800b158
+ 80020f4:	0800b144 	.word	0x0800b144
 
 080020f8 <SystemClock_Config>:
 /**
@@ -5173,7 +5173,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8002670:	200001ec 	.word	0x200001ec
   ldr r2, =_sidata
- 8002674:	0800b9ac 	.word	0x0800b9ac
+ 8002674:	0800b994 	.word	0x0800b994
   ldr r2, =_sbss
  8002678:	200001ec 	.word	0x200001ec
   ldr r4, =_ebss
@@ -8268,7 +8268,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  80037ba:	bf00      	nop
  80037bc:	40023c00 	.word	0x40023c00
  80037c0:	40023800 	.word	0x40023800
- 80037c4:	0800b1c0 	.word	0x0800b1c0
+ 80037c4:	0800b1ac 	.word	0x0800b1ac
  80037c8:	20000004 	.word	0x20000004
  80037cc:	20000008 	.word	0x20000008
 
@@ -13654,7 +13654,7 @@ int cmp_lfn (				/* 1:matched, 0:not matched */
  80057fa:	46bd      	mov	sp, r7
  80057fc:	bd90      	pop	{r4, r7, pc}
  80057fe:	bf00      	nop
- 8005800:	0800b250 	.word	0x0800b250
+ 8005800:	0800b23c 	.word	0x0800b23c
 
 08005804 <put_lfn>:
 	const WCHAR* lfn,	/* Pointer to the LFN */
@@ -13778,7 +13778,7 @@ int cmp_lfn (				/* 1:matched, 0:not matched */
  80058ca:	46bd      	mov	sp, r7
  80058cc:	bd80      	pop	{r7, pc}
  80058ce:	bf00      	nop
- 80058d0:	0800b250 	.word	0x0800b250
+ 80058d0:	0800b23c 	.word	0x0800b23c
 
 080058d4 <gen_numname>:
 	BYTE* dst,			/* Pointer to the buffer to store numbered SFN */
@@ -14944,9 +14944,9 @@ FRESULT create_name (	/* FR_OK: successful, FR_INVALID_NAME: could not create */
 		if (!w) break;					/* Break on end of the LFN */
  800606c:	bf00      	nop
  800606e:	e006      	b.n	800607e <create_name+0x2da>
- 8006070:	0800b16c 	.word	0x0800b16c
- 8006074:	0800b1d0 	.word	0x0800b1d0
- 8006078:	0800b178 	.word	0x0800b178
+ 8006070:	0800b158 	.word	0x0800b158
+ 8006074:	0800b1bc 	.word	0x0800b1bc
+ 8006078:	0800b164 	.word	0x0800b164
 			if (si > di) break;			/* No extension */
  800607c:	bf00      	nop
 	}
@@ -18419,7 +18419,7 @@ WCHAR ff_convert (	/* Converted character, Returns zero on error */
  80076c0:	f85d 7b04 	ldr.w	r7, [sp], #4
  80076c4:	4770      	bx	lr
  80076c6:	bf00      	nop
- 80076c8:	0800b260 	.word	0x0800b260
+ 80076c8:	0800b24c 	.word	0x0800b24c
 
 080076cc <ff_wtoupper>:
 
@@ -18579,8 +18579,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  80077d0:	f85d 7b04 	ldr.w	r7, [sp], #4
  80077d4:	4770      	bx	lr
  80077d6:	bf00      	nop
- 80077d8:	0800b360 	.word	0x0800b360
- 80077dc:	0800b554 	.word	0x0800b554
+ 80077d8:	0800b34c 	.word	0x0800b34c
+ 80077dc:	0800b540 	.word	0x0800b540
 
 080077e0 <__cvt>:
  80077e0:	e92d 47ff 	stmdb	sp!, {r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, sl, lr}
@@ -19003,11 +19003,11 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  8007be4:	e7ee      	b.n	8007bc4 <_printf_float+0x2a4>
  8007be6:	bf00      	nop
  8007be8:	7fefffff 	.word	0x7fefffff
- 8007bec:	0800b610 	.word	0x0800b610
- 8007bf0:	0800b614 	.word	0x0800b614
- 8007bf4:	0800b618 	.word	0x0800b618
- 8007bf8:	0800b61c 	.word	0x0800b61c
- 8007bfc:	0800b84f 	.word	0x0800b84f
+ 8007bec:	0800b5fc 	.word	0x0800b5fc
+ 8007bf0:	0800b600 	.word	0x0800b600
+ 8007bf4:	0800b604 	.word	0x0800b604
+ 8007bf8:	0800b608 	.word	0x0800b608
+ 8007bfc:	0800b837 	.word	0x0800b837
  8007c00:	6da3      	ldr	r3, [r4, #88]	@ 0x58
  8007c02:	f8dd a028 	ldr.w	sl, [sp, #40]	@ 0x28
  8007c06:	4553      	cmp	r3, sl
@@ -19487,8 +19487,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  8008080:	f104 0619 	add.w	r6, r4, #25
  8008084:	e7f5      	b.n	8008072 <_printf_i+0x222>
  8008086:	bf00      	nop
- 8008088:	0800b620 	.word	0x0800b620
- 800808c:	0800b631 	.word	0x0800b631
+ 8008088:	0800b60c 	.word	0x0800b60c
+ 800808c:	0800b61d 	.word	0x0800b61d
 
 08008090 <std>:
  8008090:	2300      	movs	r3, #0
@@ -20140,10 +20140,10 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  800862e:	4798      	blx	r3
  8008630:	3601      	adds	r6, #1
  8008632:	e7f2      	b.n	800861a <__libc_init_array+0x1e>
- 8008634:	0800b9a4 	.word	0x0800b9a4
- 8008638:	0800b9a4 	.word	0x0800b9a4
- 800863c:	0800b9a4 	.word	0x0800b9a4
- 8008640:	0800b9a8 	.word	0x0800b9a8
+ 8008634:	0800b98c 	.word	0x0800b98c
+ 8008638:	0800b98c 	.word	0x0800b98c
+ 800863c:	0800b98c 	.word	0x0800b98c
+ 8008640:	0800b990 	.word	0x0800b990
 
 08008644 <__retarget_lock_init_recursive>:
  8008644:	4770      	bx	lr
@@ -20541,15 +20541,15 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  8008a1c:	3fc68a28 	.word	0x3fc68a28
  8008a20:	509f79fb 	.word	0x509f79fb
  8008a24:	3fd34413 	.word	0x3fd34413
- 8008a28:	0800b64f 	.word	0x0800b64f
- 8008a2c:	0800b666 	.word	0x0800b666
+ 8008a28:	0800b63b 	.word	0x0800b63b
+ 8008a2c:	0800b652 	.word	0x0800b652
  8008a30:	7ff00000 	.word	0x7ff00000
- 8008a34:	0800b850 	.word	0x0800b850
+ 8008a34:	0800b838 	.word	0x0800b838
  8008a38:	3ff80000 	.word	0x3ff80000
- 8008a3c:	0800b760 	.word	0x0800b760
- 8008a40:	0800b6be 	.word	0x0800b6be
- 8008a44:	0800b64b 	.word	0x0800b64b
- 8008a48:	0800b84f 	.word	0x0800b84f
+ 8008a3c:	0800b748 	.word	0x0800b748
+ 8008a40:	0800b6aa 	.word	0x0800b6aa
+ 8008a44:	0800b637 	.word	0x0800b637
+ 8008a48:	0800b837 	.word	0x0800b837
  8008a4c:	f8db 301c 	ldr.w	r3, [fp, #28]
  8008a50:	6018      	str	r0, [r3, #0]
  8008a52:	9b07      	ldr	r3, [sp, #28]
@@ -20801,8 +20801,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  8008d12:	f7f7 fc71 	bl	80005f8 <__aeabi_dmul>
  8008d16:	e9cd 0102 	strd	r0, r1, [sp, #8]
  8008d1a:	e7c4      	b.n	8008ca6 <_dtoa_r+0x546>
- 8008d1c:	0800b760 	.word	0x0800b760
- 8008d20:	0800b738 	.word	0x0800b738
+ 8008d1c:	0800b748 	.word	0x0800b748
+ 8008d20:	0800b720 	.word	0x0800b720
  8008d24:	3ff00000 	.word	0x3ff00000
  8008d28:	40240000 	.word	0x40240000
  8008d2c:	401c0000 	.word	0x401c0000
@@ -21404,8 +21404,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  80092d8:	f000 f968 	bl	80095ac <__multadd>
  80092dc:	4681      	mov	r9, r0
  80092de:	e7ea      	b.n	80092b6 <_dtoa_r+0xb56>
- 80092e0:	0800b6be 	.word	0x0800b6be
- 80092e4:	0800b642 	.word	0x0800b642
+ 80092e0:	0800b6aa 	.word	0x0800b6aa
+ 80092e4:	0800b62e 	.word	0x0800b62e
 
 080092e8 <_free_r>:
  80092e8:	b538      	push	{r3, r4, r5, lr}
@@ -21689,8 +21689,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  8009558:	e9c0 3303 	strd	r3, r3, [r0, #12]
  800955c:	e7f7      	b.n	800954e <_Balloc+0x66>
  800955e:	bf00      	nop
- 8009560:	0800b64f 	.word	0x0800b64f
- 8009564:	0800b6cf 	.word	0x0800b6cf
+ 8009560:	0800b63b 	.word	0x0800b63b
+ 8009564:	0800b6bb 	.word	0x0800b6bb
 
 08009568 <_Bfree>:
  8009568:	b570      	push	{r4, r5, r6, lr}
@@ -21718,8 +21718,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  800959c:	6021      	str	r1, [r4, #0]
  800959e:	f843 4022 	str.w	r4, [r3, r2, lsl #2]
  80095a2:	bd70      	pop	{r4, r5, r6, pc}
- 80095a4:	0800b64f 	.word	0x0800b64f
- 80095a8:	0800b6cf 	.word	0x0800b6cf
+ 80095a4:	0800b63b 	.word	0x0800b63b
+ 80095a8:	0800b6bb 	.word	0x0800b6bb
 
 080095ac <__multadd>:
  80095ac:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
@@ -21773,8 +21773,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  8009628:	6125      	str	r5, [r4, #16]
  800962a:	4620      	mov	r0, r4
  800962c:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
- 8009630:	0800b6be 	.word	0x0800b6be
- 8009634:	0800b6cf 	.word	0x0800b6cf
+ 8009630:	0800b6aa 	.word	0x0800b6aa
+ 8009634:	0800b6bb 	.word	0x0800b6bb
 
 08009638 <__hi0bits>:
  8009638:	f5b0 3f80 	cmp.w	r0, #65536	@ 0x10000
@@ -21864,8 +21864,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  80096ee:	6103      	str	r3, [r0, #16]
  80096f0:	bd10      	pop	{r4, pc}
  80096f2:	bf00      	nop
- 80096f4:	0800b6be 	.word	0x0800b6be
- 80096f8:	0800b6cf 	.word	0x0800b6cf
+ 80096f4:	0800b6aa 	.word	0x0800b6aa
+ 80096f8:	0800b6bb 	.word	0x0800b6bb
 
 080096fc <__multiply>:
  80096fc:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -21984,8 +21984,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  8009842:	e799      	b.n	8009778 <__multiply+0x7c>
  8009844:	3e01      	subs	r6, #1
  8009846:	e79b      	b.n	8009780 <__multiply+0x84>
- 8009848:	0800b6be 	.word	0x0800b6be
- 800984c:	0800b6cf 	.word	0x0800b6cf
+ 8009848:	0800b6aa 	.word	0x0800b6aa
+ 800984c:	0800b6bb 	.word	0x0800b6bb
 
 08009850 <__pow5mult>:
  8009850:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -22053,9 +22053,9 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  80098f0:	4630      	mov	r0, r6
  80098f2:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
  80098f6:	bf00      	nop
- 80098f8:	0800b728 	.word	0x0800b728
- 80098fc:	0800b64f 	.word	0x0800b64f
- 8009900:	0800b6cf 	.word	0x0800b6cf
+ 80098f8:	0800b714 	.word	0x0800b714
+ 80098fc:	0800b63b 	.word	0x0800b63b
+ 8009900:	0800b6bb 	.word	0x0800b6bb
 
 08009904 <__lshift>:
  8009904:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -22134,8 +22134,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  80099ce:	d8f9      	bhi.n	80099c4 <__lshift+0xc0>
  80099d0:	e7ea      	b.n	80099a8 <__lshift+0xa4>
  80099d2:	bf00      	nop
- 80099d4:	0800b6be 	.word	0x0800b6be
- 80099d8:	0800b6cf 	.word	0x0800b6cf
+ 80099d4:	0800b6aa 	.word	0x0800b6aa
+ 80099d8:	0800b6bb 	.word	0x0800b6bb
 
 080099dc <__mcmp>:
  80099dc:	690a      	ldr	r2, [r1, #16]
@@ -22271,8 +22271,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  8009b2e:	3f01      	subs	r7, #1
  8009b30:	e7e7      	b.n	8009b02 <__mdiff+0xee>
  8009b32:	bf00      	nop
- 8009b34:	0800b6be 	.word	0x0800b6be
- 8009b38:	0800b6cf 	.word	0x0800b6cf
+ 8009b34:	0800b6aa 	.word	0x0800b6aa
+ 8009b38:	0800b6bb 	.word	0x0800b6bb
 
 08009b3c <__d2b>:
  8009b3c:	e92d 43f7 	stmdb	sp!, {r0, r1, r2, r4, r5, r6, r7, r8, r9, lr}
@@ -22338,8 +22338,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  8009bda:	f7ff fd2d 	bl	8009638 <__hi0bits>
  8009bde:	ebc0 1042 	rsb	r0, r0, r2, lsl #5
  8009be2:	e7e5      	b.n	8009bb0 <__d2b+0x74>
- 8009be4:	0800b6be 	.word	0x0800b6be
- 8009be8:	0800b6cf 	.word	0x0800b6cf
+ 8009be4:	0800b6aa 	.word	0x0800b6aa
+ 8009be8:	0800b6bb 	.word	0x0800b6bb
 
 08009bec <__ssputs_r>:
  8009bec:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -22616,11 +22616,11 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  8009e80:	4638      	mov	r0, r7
  8009e82:	f7fd ffe5 	bl	8007e50 <_printf_i>
  8009e86:	e7ed      	b.n	8009e64 <_svfiprintf_r+0x1c0>
- 8009e88:	0800b828 	.word	0x0800b828
- 8009e8c:	0800b832 	.word	0x0800b832
+ 8009e88:	0800b810 	.word	0x0800b810
+ 8009e8c:	0800b81a 	.word	0x0800b81a
  8009e90:	08007921 	.word	0x08007921
  8009e94:	08009bed 	.word	0x08009bed
- 8009e98:	0800b82e 	.word	0x0800b82e
+ 8009e98:	0800b816 	.word	0x0800b816
 
 08009e9c <_sungetc_r>:
  8009e9c:	b538      	push	{r3, r4, r5, lr}
@@ -22981,8 +22981,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  800a1f2:	bf00      	nop
  800a1f4:	08009e9d 	.word	0x08009e9d
  800a1f8:	08009f13 	.word	0x08009f13
- 800a1fc:	0800b89b 	.word	0x0800b89b
- 800a200:	0800b82e 	.word	0x0800b82e
+ 800a1fc:	0800b883 	.word	0x0800b883
+ 800a200:	0800b816 	.word	0x0800b816
  800a204:	4b0a      	ldr	r3, [pc, #40]	@ (800a230 <__ssvfiscanf_r+0x2e4>)
  800a206:	2b00      	cmp	r3, #0
  800a208:	f43f aec5 	beq.w	8009f96 <__ssvfiscanf_r+0x4a>
@@ -23266,11 +23266,11 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  800a49c:	4630      	mov	r0, r6
  800a49e:	f7fd fcd7 	bl	8007e50 <_printf_i>
  800a4a2:	e7e4      	b.n	800a46e <_vfiprintf_r+0x1e6>
- 800a4a4:	0800b828 	.word	0x0800b828
- 800a4a8:	0800b832 	.word	0x0800b832
+ 800a4a4:	0800b810 	.word	0x0800b810
+ 800a4a8:	0800b81a 	.word	0x0800b81a
  800a4ac:	08007921 	.word	0x08007921
  800a4b0:	0800a263 	.word	0x0800a263
- 800a4b4:	0800b82e 	.word	0x0800b82e
+ 800a4b4:	0800b816 	.word	0x0800b816
 
 0800a4b8 <_scanf_chars>:
  800a4b8:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -23353,7 +23353,7 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  800a560:	2000      	movs	r0, #0
  800a562:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
  800a566:	bf00      	nop
- 800a568:	0800b89b 	.word	0x0800b89b
+ 800a568:	0800b883 	.word	0x0800b883
 
 0800a56c <_scanf_i>:
  800a56c:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -23547,10 +23547,10 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  800a73e:	2001      	movs	r0, #1
  800a740:	e7f2      	b.n	800a728 <_scanf_i+0x1bc>
  800a742:	bf00      	nop
- 800a744:	0800b1b4 	.word	0x0800b1b4
+ 800a744:	0800b1a0 	.word	0x0800b1a0
  800a748:	0800ad4d 	.word	0x0800ad4d
  800a74c:	0800ae2d 	.word	0x0800ae2d
- 800a750:	0800b849 	.word	0x0800b849
+ 800a750:	0800b831 	.word	0x0800b831
 
 0800a754 <__sflush_r>:
  800a754:	f9b1 200c 	ldrsh.w	r2, [r1, #12]
@@ -24045,9 +24045,9 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  800ab9c:	e7f4      	b.n	800ab88 <__assert_func+0x14>
  800ab9e:	bf00      	nop
  800aba0:	20000030 	.word	0x20000030
- 800aba4:	0800b899 	.word	0x0800b899
- 800aba8:	0800b86b 	.word	0x0800b86b
- 800abac:	0800b85e 	.word	0x0800b85e
+ 800aba4:	0800b881 	.word	0x0800b881
+ 800aba8:	0800b853 	.word	0x0800b853
+ 800abac:	0800b846 	.word	0x0800b846
 
 0800abb0 <_calloc_r>:
  800abb0:	b570      	push	{r4, r5, r6, lr}
@@ -24225,7 +24225,7 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  800ad40:	d1f6      	bne.n	800ad30 <_strtol_l.constprop.0+0xd8>
  800ad42:	f8c8 1000 	str.w	r1, [r8]
  800ad46:	e794      	b.n	800ac72 <_strtol_l.constprop.0+0x1a>
- 800ad48:	0800b89b 	.word	0x0800b89b
+ 800ad48:	0800b883 	.word	0x0800b883
 
 0800ad4c <_strtol_r>:
  800ad4c:	f7ff bf84 	b.w	800ac58 <_strtol_l.constprop.0>
@@ -24318,7 +24318,7 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  800ae22:	1e69      	subs	r1, r5, #1
  800ae24:	6011      	str	r1, [r2, #0]
  800ae26:	e7f5      	b.n	800ae14 <_strtoul_l.constprop.0+0xc4>
- 800ae28:	0800b89b 	.word	0x0800b89b
+ 800ae28:	0800b883 	.word	0x0800b883
 
 0800ae2c <_strtoul_r>:
  800ae2c:	f7ff bf90 	b.w	800ad50 <_strtoul_l.constprop.0>
