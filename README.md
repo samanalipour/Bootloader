@@ -10,7 +10,7 @@ This project is a custom bootloader that, at startup, checks if the user pressed
     - [Overview](#Overview)
     - [HEX parser](#HEX-parser)
     - [Jump to user application](#Jump-to-user-application)
-  - [User Application](#Application)
+  - [User Application](#User-Application)
 
 ## Hardware
 
