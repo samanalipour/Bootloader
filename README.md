@@ -91,13 +91,12 @@ The parser continues until it encounters the End-Of-File record, which is identi
 Once the firmware update is completed or if the update mode is not triggered the bootloader transfers execution to the user application.  
 This process includes:
 
-1. **Disabling interrupts**
-2. **Stopping SysTick**
-3. **Resetting clock configuration**
-4. **Clearing and disabling NVIC interrupts**
-5. **Loading the user application’s initial stack pointer from the begining of the user application**
-6. **Setting the Vector Table Offset Register (VTOR) to point to the user application**
-7. **Jumping to the Reset_Handler of the user application**
+1. **Stopping SysTick**
+2. **Resetting clock configuration**
+3. **Clearing and disabling NVIC interrupts**
+4. **Loading the user application’s initial stack pointer from the begining of the user application**
+5. **Setting the Vector Table Offset Register (VTOR) to point to the user application**
+6. **Jumping to the Reset_Handler of the user application**
 
 ## User Application
 
