@@ -56,9 +56,7 @@ Parser_status parse_hex_line(const char *line, HexLine *result) {
         }
 
         //case 0x03: // Start Segment Address Record
-        case 0x05: // Start Linear Address Record
-            // These are optional and depend on your use case.
-            // Parse and store the address if needed.
+        case 0x05: 
              return 3;
             //break;
 
